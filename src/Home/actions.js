@@ -1,4 +1,5 @@
 import {getHome} from '../reducers'
+import {Actions} from 'react-native-router-flux'
 
 export const incrementCount = ()=>({
   type: 'INCREMENT'
@@ -16,3 +17,9 @@ export const incrementCountThunk = ()=>(
     }
   }
 )
+
+export const handleCard = ()=>{
+  Actions.card({title: 'Custom Card Title'})
+  // Redux require you to return an object with type.
+  return {type: 'CardPush'}
+}
